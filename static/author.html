@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作者 - 投稿審查系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html">回首頁</a>
+    <h1>作者：<span id="author-name"></span></h1>
+
+    <!-- 我的投稿清單 -->
+    <div class="card">
+      <h2>我的投稿</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>類別</th>
+            <th>標題</th>
+            <th>審查狀態</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="article-list"></tbody>
+      </table>
+    </div>
+
+    <!-- 新增 / 編輯 表單 -->
+    <div class="card">
+      <h2 id="form-title">新增投稿</h2>
+      <form onsubmit="saveArticle(event)">
+        <label>類別</label>
+        <select id="category">
+          <option>科技</option>
+          <option>生活</option>
+          <option>文學</option>
+          <option>其他</option>
+        </select>
+
+        <label>標題</label>
+        <input id="title" required>
+
+        <label>文章內容</label>
+        <textarea id="content" rows="8" required></textarea>
+
+        <button type="submit">儲存</button>
+        <button type="button" class="gray" onclick="resetForm()">取消</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="api.js"></script>
+  <script src="author.js"></script>
+</body>
+</html>

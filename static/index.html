@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>投稿審查系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>投稿審查系統</h1>
+    <p class="hint">請選擇你的角色</p>
+
+    <div class="card">
+      <h2>我是作者</h2>
+      <!-- 送出後會跳到 author.html?name=你的名字 -->
+      <form action="author.html">
+        <input name="name" placeholder="輸入你的名字" required>
+        <button type="submit">進入</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>我是編輯</h2>
+      <a class="button" href="editor.html">進入審查</a>
+    </div>
+  </div>
+</body>
+</html>

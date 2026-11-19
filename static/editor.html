@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>編輯 - 投稿審查系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html">回首頁</a>
+    <h1>編輯審查</h1>
+
+    <!-- 待審查清單 -->
+    <div class="card">
+      <h2>待審查稿件</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>作者</th>
+            <th>類別</th>
+            <th>標題</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="review-list"></tbody>
+      </table>
+    </div>
+
+    <!-- 稿件內容 (按「查看」才會出現) -->
+    <div class="card" id="detail" hidden>
+      <h2 id="detail-title"></h2>
+      <p class="hint">
+        作者：<span id="detail-author"></span>
+        ／ 類別：<span id="detail-category"></span>
+      </p>
+      <div id="detail-content" class="content"></div>
+
+      <button onclick="approveArticle()">通過</button>
+      <button class="danger" onclick="rejectArticle()">退回</button>
+      <button class="gray" onclick="closeDetail()">關閉</button>
+    </div>
+  </div>
+
+  <script src="api.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>
